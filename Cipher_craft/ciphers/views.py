@@ -1,33 +1,41 @@
 from django.shortcuts import render
-from .forms import CipherTextForm
+from . import forms as cforms
+from . import helpers as chelpers
 # Create your views here.
 forms = {
-    'caesar': CipherTextForm
+    'caesar': cforms.CipherTextForm,
+    'vigenere': cforms.VigenereForm
+}
+
+encrypt_func = {
+    'caesar': chelpers.caesarEncrypt,
+    'vigenere': chelpers.vigenereEncrypt
+}
+
+decrypt_func = {
+    'caesar': chelpers.caesarDecrypt,
+    'vigenere': chelpers.vigenereDecrypt
+}
+
+cipher_title = {
+    'caesar': 'Caesar Cipher',
+    'vigenere': 'Vigenere Cipher'
 }
 def ciphers(request,cipher_choice):
     context = {
         'form': forms[cipher_choice](),
-        'output_text': ''
+        'output_text': '',
+        'title': cipher_title[cipher_choice]
     }
     if request.method == 'POST':
         form = forms[cipher_choice](request.POST)
         if form.is_valid():
             context['form'] = form
-            output = caesarEncrypt(form)
+            operation = form.cleaned_data['operation']
+            if operation == 'encrypt':
+                output = encrypt_func[cipher_choice](form)
+            else:
+                output = decrypt_func[cipher_choice](form)
             context['output_text'] = output
-    return render(request,'ciphers/caesar.html',context)
+    return render(request,'ciphers/ciphers.html',context)
 
-def caesarEncrypt(form):
-    text = form.cleaned_data['text']
-    s = form.cleaned_data['key']
-    result = ""
-    # transverse the plain text
-    for i in range(len(text)):
-        char = text[i]
-    # Encrypt uppercase characters in plain text
-        if (char.isupper()):
-            result += chr((ord(char) + s-65) % 26 + 65)
-    # Encrypt lowercase characters in plain text
-        else:
-            result += chr((ord(char) + s - 97) % 26 + 97)
-    return result
