@@ -1,0 +1,11 @@
+{%extends "home/base.html"%}
+{%block content%}
+<legend class="border-bottom mb-4 bodcol cipher-heading">
+    Ciphers
+</legend>
+<ul class="list-group">
+    {% for x,y in ciphers.items %} 
+    <li><a href="{{x}}">{{y}}</a></li>
+    {% endfor %}
+</ul>
+{%endblock content%}
