@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     # path('/'),
-    path('caesar/', views.caesar,name='caesar_cipher'),
+    path('ciphers/<str:cipher_choice>/', views.ciphers,name='ciphers'),
 ]
