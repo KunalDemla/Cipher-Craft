@@ -3,9 +3,11 @@
 <legend class="border-bottom mb-4 bodcol cipher-heading">
     Ciphers
 </legend>
-<ul class="list-group">
-    {% for x,y in ciphers.items %} 
-    <li><a href="{{x}}">{{y}}</a></li>
-    {% endfor %}
-</ul>
+<div>
+    <ul class="list-group">
+        {% for x,y in ciphers.items %} 
+        <li class="mb-2"><a style="color: black; font-size: 20px;" href="{{x}}">{{y}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 {%endblock content%}

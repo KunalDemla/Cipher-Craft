@@ -8,6 +8,7 @@
   src: url(https://cdn.discordapp.com/attachments/841730659605282836/1035516892368076860/himagsikan.ttf)
 }
 
+
 body {
     background: #DFF1AC !important;
     border-color:  #000000 !important;
@@ -141,3 +142,4 @@ body {
     overflow-y: auto;
     word-wrap:break-word
     }
+
