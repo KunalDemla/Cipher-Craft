@@ -34,16 +34,19 @@ def ciphers(request,cipher_choice):
     context = {
         'form': forms[cipher_choice](),
         'output_text': '',
-        'title': cipher_title[cipher_choice]
+        'title': cipher_title[cipher_choice],
+        'button':''
     }
     if request.method == 'POST':
         form = forms[cipher_choice](request.POST)
         if form.is_valid():
             context['form'] = form
             operation = form.cleaned_data['operation']
+            context['button']=operation.upper()
             if operation == 'encrypt':
                 output = encrypt_func[cipher_choice](form)
             else:
                 output = decrypt_func[cipher_choice](form)
             context['output_text'] = output
+
     return render(request,'ciphers/ciphers.html',context)
