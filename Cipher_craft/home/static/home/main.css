@@ -1,5 +1,5 @@
 body {
-    background: #fafafa;
+    background: #DFF1AC !important;
     color: #333333;
     margin-top: 5rem;
   }
@@ -12,8 +12,12 @@ body {
     margin: 0;
   }
   
+  .bgcol{
+    background: #DFF1AC !important;
+  }
+
   .bg-steel {
-    background-color: #5f788a;
+    background: linear-gradient(90.27deg, #254A25 -0.97%, #2AAF2A 97.68%);
   }
   
   .site-header .navbar-nav .nav-link {
@@ -81,4 +85,18 @@ body {
   
   .account-heading {
     font-size: 2.5rem;
+  }
+
+  .cipher-heading{
+    background-image: url(https://cdn.discordapp.com/attachments/841730659605282836/1035492899216953354/Heading_bg_new.png);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text ;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Himagsikan';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    -webkit-font-smoothing: antialiased;
+    /* line-height: 104px; */
   }
