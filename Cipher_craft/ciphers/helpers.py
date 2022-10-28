@@ -25,7 +25,7 @@ def caesarDecrypt(form):
     return result
 
 # vigenere cipher
-def generateKey(string, key): 
+def viggenerateKey(string, key): 
     key = list(key) 
     if len(string) == len(key): 
         return(key) 
@@ -37,7 +37,7 @@ def generateKey(string, key):
 def vigenereEncrypt(form):
     string = (form.cleaned_data['text']).upper()
     keyword = (form.cleaned_data['key']).upper()
-    key = generateKey(string,keyword)
+    key = viggenerateKey(string,keyword)
     encrypt_text = [] 
     for i in range(len(string)): 
         x = (ord(string[i]) +ord(key[i])) % 26
@@ -48,7 +48,7 @@ def vigenereEncrypt(form):
 def vigenereDecrypt(form): 
     encrypt_text = (form.cleaned_data['text']).upper()
     keyword = (form.cleaned_data['key']).upper()
-    key = generateKey(encrypt_text,keyword)
+    key = viggenerateKey(encrypt_text,keyword)
     orig_text = [] 
     for i in range(len(encrypt_text)): 
         x = (ord(encrypt_text[i]) -ord(key[i]) + 26) % 26
