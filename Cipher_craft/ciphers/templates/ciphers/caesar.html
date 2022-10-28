@@ -5,15 +5,15 @@
         <form  method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4 cipher-heading">
+                <legend class="border-bottom mb-4 bodcol cipher-heading">
                     Caesar Cipher
                 </legend>
                 {{ form|crispy }}
                 <br>
-                <textarea class="mt-10" name="" id="" cols="50" rows="2" disabled>{{output_text}}</textarea>
+                <textarea class="mt-10 form-control" onkeyup="textAreaAdjust(this)" style="overflow:hidden" name="" id="" disabled>{{output_text}}</textarea>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">
+                <button class="btn btn-outline-success" type="submit">
                     Encrypt
                 </button>
             </div>
