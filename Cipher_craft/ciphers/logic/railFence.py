@@ -17,7 +17,7 @@ class RailFence:
         return arr
 
     def encrypt(self, plaintext, key):
-        self._plaintext = plaintext.replace(' ', '').lower()
+        self._plaintext = plaintext.replace(' ', '')
         self._ciphertext = ""
         self._key = key
         L = self._sequence(self._key)
@@ -35,7 +35,7 @@ class RailFence:
         return self._ciphertext
 
     def decrypt(self, ciphertext, key):
-        self._ciphertext = ciphertext.lower()
+        self._ciphertext = ciphertext
         self._plaintext = ""
         self._key = key
         L = self._sequence(self._key)
