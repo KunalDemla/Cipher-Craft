@@ -73,3 +73,13 @@ def plydecrypt(form):
     s = form.cleaned_data['key']
     obj = PlayfairCipher()
     return obj.decrypt(text,s)
+
+from .logic.morse import Morse
+def morseEncrypt(form):
+    text = form.cleaned_data['text']
+    obj = Morse()
+    return obj.encrypt(text)
+def morseDecrypt(form):
+    encrypt_text = form.cleaned_data['text']
+    obj = Morse()
+    return obj.decrypt(encrypt_text)

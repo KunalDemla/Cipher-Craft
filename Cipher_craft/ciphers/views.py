@@ -1,30 +1,5 @@
 from django.shortcuts import render
-from . import forms as cforms
-from . import helpers as chelpers
-# Create your views here.
-forms = {
-    'caesar': cforms.CipherTextForm,
-    'vigenere': cforms.VigenereForm,
-    'playfair':cforms.VigenereForm
-}
-
-encrypt_func = {
-    'caesar': chelpers.caesarEncrypt,
-    'vigenere': chelpers.vigenereEncrypt,
-    'playfair':chelpers.plyencrypt
-}
-
-decrypt_func = {
-    'caesar': chelpers.caesarDecrypt,
-    'vigenere': chelpers.vigenereDecrypt,
-    'playfair':chelpers.plydecrypt
-}
-
-cipher_title = {
-    'caesar': 'Caesar Cipher',
-    'vigenere': 'Vigenere Cipher',
-    'playfair': 'Playfair Cipher'
-}
+from .conf import forms,encrypt_func,decrypt_func,cipher_title
 
 def home(request):
     context={
@@ -39,14 +14,13 @@ def ciphers(request,cipher_choice):
         'form': forms[cipher_choice](),
         'output_text': '',
         'title': cipher_title[cipher_choice],
-        'button':''
+        'about': 'ciphers/'+cipher_choice+'_about.html'
     }
     if request.method == 'POST':
         form = forms[cipher_choice](request.POST)
         if form.is_valid():
             context['form'] = form
             operation = form.cleaned_data['operation']
-            context['button']=operation.upper()
             if operation == 'encrypt':
                 output = encrypt_func[cipher_choice](form)
             else:
