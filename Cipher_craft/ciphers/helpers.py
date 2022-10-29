@@ -51,3 +51,17 @@ def morseDecrypt(form):
     encrypt_text = form.cleaned_data['text']
     obj = Morse()
     return obj.decrypt(encrypt_text)
+
+#Verman
+from .logic.vernam import VernamCipher
+def vernamEncrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = VernamCipher()
+    return obj.encrypt(text,s)
+
+def vernamDecrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = VernamCipher()
+    return obj.decrypt(text,s)
