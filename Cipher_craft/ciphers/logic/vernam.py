@@ -16,7 +16,7 @@ class VernamCipher:
                 k2 = ord(self._key[i]) - 97
                 s = chr((k1 + k2) % 26 + 97)
                 self._ciphertext += s
-            return self._ciphertext
+            return self._ciphertext.upper()
 
     def decrypt(self, cipher_text, key):
         self._ciphertext = cipher_text.replace(" ", "").lower()
@@ -30,4 +30,4 @@ class VernamCipher:
                 k2 = ord(self._key[i]) - 97
                 s = chr((((k1 - k2) + 26) % 26) + 97)
                 self._plaintext += s
-            return self._plaintext
+            return self._plaintext.upper()
