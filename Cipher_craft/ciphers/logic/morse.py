@@ -41,7 +41,7 @@ class Morse:
         :param encrypted_text: Encrypted text to be decrypted (str)
         :return: Decrypted text (str)
         """
-        self._encrypted_text = encrypted_text
+        self._encrypted_text = encrypted_text.replace('_','-')
         self._encrypted_text += ' '
         self._plain_text = ''
         temp = ''
