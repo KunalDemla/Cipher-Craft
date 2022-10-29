@@ -25,6 +25,7 @@ def caesarDecrypt(form):
     return result
 
 # vigenere cipher
+from .logic.vigenere import VigenereCipher 
 def viggenerateKey(string, key): 
     key = list(key) 
     if len(string) == len(key): 
@@ -35,19 +36,22 @@ def viggenerateKey(string, key):
     return("" . join(key)) 
 
 def vigenereEncrypt(form):
-    string = (form.cleaned_data['text']).upper()
+    text = (form.cleaned_data['text']).upper()
     keyword = (form.cleaned_data['key']).upper()
-    key = viggenerateKey(string,keyword)
+    # obj=VigenereCipher()
+    key = viggenerateKey(text,keyword)
     encrypt_text = [] 
-    for i in range(len(string)): 
-        x = (ord(string[i]) +ord(key[i])) % 26
+    for i in range(len(text)): 
+        x = (ord(text[i]) +ord(key[i])) % 26
         x += ord('A') 
         encrypt_text.append(chr(x)) 
     return("" . join(encrypt_text)) 
+    
 
 def vigenereDecrypt(form): 
     encrypt_text = (form.cleaned_data['text']).upper()
     keyword = (form.cleaned_data['key']).upper()
+    # obj=VigenereCipher()
     key = viggenerateKey(encrypt_text,keyword)
     orig_text = [] 
     for i in range(len(encrypt_text)): 
@@ -55,3 +59,17 @@ def vigenereDecrypt(form):
         x += ord('A') 
         orig_text.append(chr(x)) 
     return("" . join(orig_text))
+    # return obj.decrypt(encrypt_text,keyword)
+
+
+from .logic.playfair import PlayfairCipher
+def plyencrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = PlayfairCipher()
+    return obj.encrypt(text,s)
+def plydecrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = PlayfairCipher()
+    return obj.decrypt(text,s)

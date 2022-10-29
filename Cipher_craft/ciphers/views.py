@@ -5,21 +5,25 @@ from . import helpers as chelpers
 forms = {
     'caesar': cforms.CipherTextForm,
     'vigenere': cforms.VigenereForm,
+    'playfair':cforms.VigenereForm
 }
 
 encrypt_func = {
     'caesar': chelpers.caesarEncrypt,
-    'vigenere': chelpers.vigenereEncrypt
+    'vigenere': chelpers.vigenereEncrypt,
+    'playfair':chelpers.plyencrypt
 }
 
 decrypt_func = {
     'caesar': chelpers.caesarDecrypt,
-    'vigenere': chelpers.vigenereDecrypt
+    'vigenere': chelpers.vigenereDecrypt,
+    'playfair':chelpers.plydecrypt
 }
 
 cipher_title = {
     'caesar': 'Caesar Cipher',
-    'vigenere': 'Vigenere Cipher'
+    'vigenere': 'Vigenere Cipher',
+    'playfair': 'Playfair Cipher'
 }
 
 def home(request):
