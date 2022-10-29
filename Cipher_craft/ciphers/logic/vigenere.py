@@ -5,50 +5,31 @@ class VigenereCipher:
     """
     def encrypt(self, plain_text, key):
     def decrypt(self, cipher_text, key):
+    def viggenerateKey(self,string, key):
     """
-    def __init__(self):
-        self._plain_text = []
-        self._key = ''
-        self._cipher_text = []
+    def viggenerateKey(self,string, key): 
+        key = list(key) 
+        if len(string) == len(key): 
+            return(key) 
+        else: 
+            for i in range(len(string) - len(key)): 
+                key.append(key[i % len(key)]) 
+        return("" . join(key)) 
 
     def encrypt(self, plain_text, key):
-        """
-        :param plain_text: plain text to be encrypted (str)
-        :param key: key to encrypt plain text (str)
-        :return: encrypted text (str)
-        """
-        index = 0
-        self._cipher_text = ""
-        self._plain_text = plain_text.upper()
-        self._key = key.upper()
-        for c in self._plain_text:
-            if c in string.ascii_lowercase:
-                off = ord(self._key[index]) - ord('a')
-                encrypt_num = (ord(c) - ord('a') + off) % 26
-                encrypt = chr(encrypt_num + ord('a'))
-                self._cipher_text += encrypt
-                index = (index + 1) % len(self._key)
-            else:
-                self._cipher_text += c
-        return self._cipher_text
+        key = self.viggenerateKey(plain_text,key)
+        encrypt_text = [] 
+        for i in range(len(plain_text)): 
+            x = (ord(plain_text[i]) +ord(key[i])) % 26
+            x += ord('A') 
+            encrypt_text.append(chr(x)) 
+        return("" . join(encrypt_text)) 
 
     def decrypt(self, cipher_text, key):
-        """
-        :param cipher_text: cipher text to be decrypted (str)
-        :param key: key to decrypt cipher text (str)
-        :return: decrypted text (str)
-        """
-        index = 0
-        self._plain_text = ""
-        self._cipher_text = cipher_text.upper()
-        self._key = key.upper()
-        for c in self._cipher_text:
-            if c in string.ascii_lowercase:
-                off = ord(self._key[index]) - ord('a')
-                positive_off = 26 - off
-                decrypt = chr((ord(c) - ord('a') + positive_off) % 26 + ord('a'))
-                self._plain_text += decrypt
-                index = (index + 1) % len(self._key)
-            else:
-                self._plain_text += c
-        return self._plain_text
+        key = self.viggenerateKey(cipher_text,key)
+        orig_text = [] 
+        for i in range(len(cipher_text)): 
+            x = (ord(cipher_text[i]) -ord(key[i]) + 26) % 26
+            x += ord('A') 
+            orig_text.append(chr(x)) 
+        return("" . join(orig_text))
