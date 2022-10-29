@@ -36,3 +36,16 @@ class VigenereForm(forms.Form):
             ('decrypt', "Decrypt"),
         )
     )
+    
+class MorseForm(forms.Form):
+    text = forms.CharField(
+        label='Text', 
+        max_length=1000
+    )
+    operation = forms.ChoiceField(
+        label='Encrypt or Decrypt',
+        choices=(
+            ('encrypt', "Encrypt"),
+            ('decrypt', "Decrypt"),
+        )
+    )
