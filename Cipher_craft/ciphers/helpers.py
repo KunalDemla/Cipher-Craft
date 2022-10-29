@@ -1,57 +1,67 @@
-
+from cgi import test
+from .logic.ceasar import CeasarCipher
 # caesar cipher
 def caesarEncrypt(form):
     text = form.cleaned_data['text']
-    s = form.cleaned_data['key']%26
-    result = ""
-    for i in range(len(text)):
-        char = text[i]
-        if (char.isupper()):
-            result += chr((ord(char) + s-65) % 26 + 65)
-        else:
-            result += chr((ord(char) + s - 97) % 26 + 97)
-    return result
+    key = form.cleaned_data['key']%26
+    obj=CeasarCipher()
+    return obj.encrypt(text,key)
 
 def caesarDecrypt(form):
     text = form.cleaned_data['text']
-    s = -form.cleaned_data['key']%26
-    result = ""
-    for i in range(len(text)):
-        char = text[i]
-        if (char.isupper()):
-            result += chr((ord(char) + s-65) % 26 + 65)
-        else:
-            result += chr((ord(char) + s - 97) % 26 + 97)
-    return result
+    key = -form.cleaned_data['key']%26
+    obj=CeasarCipher()
+    return obj.decrypt(text,key)
 
 # vigenere cipher
-def viggenerateKey(string, key): 
-    key = list(key) 
-    if len(string) == len(key): 
-        return(key) 
-    else: 
-        for i in range(len(string) - len(key)): 
-            key.append(key[i % len(key)]) 
-    return("" . join(key)) 
-
+from .logic.vigenere import VigenereCipher 
 def vigenereEncrypt(form):
-    string = (form.cleaned_data['text']).upper()
-    keyword = (form.cleaned_data['key']).upper()
-    key = viggenerateKey(string,keyword)
-    encrypt_text = [] 
-    for i in range(len(string)): 
-        x = (ord(string[i]) +ord(key[i])) % 26
-        x += ord('A') 
-        encrypt_text.append(chr(x)) 
-    return("" . join(encrypt_text)) 
-
+    text = (form.cleaned_data['text']).upper()
+    key = (form.cleaned_data['key']).upper()
+    obj=VigenereCipher()
+    return obj.encrypt(text,key)
+    
 def vigenereDecrypt(form): 
     encrypt_text = (form.cleaned_data['text']).upper()
     keyword = (form.cleaned_data['key']).upper()
-    key = viggenerateKey(encrypt_text,keyword)
-    orig_text = [] 
-    for i in range(len(encrypt_text)): 
-        x = (ord(encrypt_text[i]) -ord(key[i]) + 26) % 26
-        x += ord('A') 
-        orig_text.append(chr(x)) 
-    return("" . join(orig_text))
+    obj=VigenereCipher()
+    return obj.decrypt(encrypt_text,keyword)
+
+#PLAYFAIR
+from .logic.playfair import PlayfairCipher
+def plyencrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = PlayfairCipher()
+    return obj.encrypt(text,s)
+def plydecrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = PlayfairCipher()
+    return obj.decrypt(text,s)
+
+
+#MORSE
+from .logic.morse import Morse
+def morseEncrypt(form):
+    text = form.cleaned_data['text']
+    obj = Morse()
+    return obj.encrypt(text)
+def morseDecrypt(form):
+    encrypt_text = form.cleaned_data['text']
+    obj = Morse()
+    return obj.decrypt(encrypt_text)
+
+#Verman
+from .logic.vernam import VernamCipher
+def vernamEncrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = VernamCipher()
+    return obj.encrypt(text,s)
+
+def vernamDecrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = VernamCipher()
+    return obj.decrypt(text,s)
