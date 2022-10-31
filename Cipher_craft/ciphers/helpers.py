@@ -81,11 +81,3 @@ def vernamDecrypt(form):
 
 
 
-
-
-#Tower of hanoi
-from .logic.TowerOfHanoi import TowerOfHanoi
-def TowerOfHanoiSolver(form):
-    disks = form.cleaned_data['disks']
-    obj = TowerOfHanoi()
-    return obj.solver(disks)
