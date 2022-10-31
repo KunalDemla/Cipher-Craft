@@ -7,8 +7,6 @@ forms = {
     'playfair': cforms.VigenereForm,
     'vernam':cforms.VigenereForm,
     'morse': cforms.MorseForm,
-
-    
 }
 
 encrypt_func = {
@@ -16,9 +14,7 @@ encrypt_func = {
     'vigenere': chelpers.vigenereEncrypt,
     'playfair': chelpers.plyencrypt,
     'vernam': chelpers.vernamEncrypt,
-    'morse': chelpers.morseEncrypt,
-
-    
+    'morse': chelpers.morseEncrypt,   
 }
 
 decrypt_func = {
@@ -26,9 +22,7 @@ decrypt_func = {
     'vigenere': chelpers.vigenereDecrypt,
     'playfair': chelpers.plydecrypt,
     'vernam': chelpers.vernamDecrypt,
-    'morse': chelpers.morseDecrypt,
-
-    
+    'morse': chelpers.morseDecrypt,  
 }
 
 cipher_title = {
@@ -36,7 +30,5 @@ cipher_title = {
     'vigenere': 'Vigenere Cipher',
     'playfair': 'Playfair Cipher',
     'vernam':'Vernam Cipher',
-    'morse': 'Morse Code',
-    
-    
+    'morse': 'Morse Code',  
 }
