@@ -16,7 +16,7 @@ encrypt_func = {
     'playfair': chelpers.plyencrypt,
     'vernam': chelpers.vernamEncrypt,
     'morse': chelpers.morseEncrypt,
-    'railfence': chelpers.railfenceDecrypt,
+    'railfence': chelpers.railfenceEncrypt,
 }
 
 decrypt_func = {
@@ -25,7 +25,7 @@ decrypt_func = {
     'playfair': chelpers.plydecrypt,
     'vernam': chelpers.vernamDecrypt,
     'morse': chelpers.morseDecrypt,
-    'railfence': chelpers.railfenceEncrypt,
+    'railfence': chelpers.railfenceDecrypt,
 }
 
 cipher_title = {
