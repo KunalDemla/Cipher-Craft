@@ -66,18 +66,16 @@ def vernamDecrypt(form):
     obj = VernamCipher()
     return obj.decrypt(text,s)
 
+#railfence
+from .logic.railFence import RailFence
+def railfenceEncrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = RailFence()
+    return obj.encrypt(text,s)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def railfenceDecrypt(form):
+    text = form.cleaned_data['text']
+    s = form.cleaned_data['key']
+    obj = RailFence()
+    return obj.decrypt(text,s)
