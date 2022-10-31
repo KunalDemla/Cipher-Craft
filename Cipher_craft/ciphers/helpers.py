@@ -66,6 +66,23 @@ def vernamDecrypt(form):
     obj = VernamCipher()
     return obj.decrypt(text,s)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Tower of hanoi
 from .logic.TowerOfHanoi import TowerOfHanoi
 def TowerOfHanoiSolver(form):

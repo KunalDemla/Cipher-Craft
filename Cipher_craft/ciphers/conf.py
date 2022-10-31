@@ -7,6 +7,7 @@ forms = {
     'playfair': cforms.VigenereForm,
     'vernam':cforms.VigenereForm,
     'morse': cforms.MorseForm,
+
     'TowerOfHanoi': cforms.TowerOfHanoiForm
 }
 
@@ -16,6 +17,7 @@ encrypt_func = {
     'playfair': chelpers.plyencrypt,
     'vernam': chelpers.vernamEncrypt,
     'morse': chelpers.morseEncrypt,
+
     'TowerOfHanoi':chelpers.TowerOfHanoiSolver
 }
 
@@ -25,6 +27,7 @@ decrypt_func = {
     'playfair': chelpers.plydecrypt,
     'vernam': chelpers.vernamDecrypt,
     'morse': chelpers.morseDecrypt,
+
     'TowerOfHanoi':chelpers.TowerOfHanoiSolver
 }
 
@@ -34,5 +37,6 @@ cipher_title = {
     'playfair': 'Playfair Cipher',
     'vernam':'Vernam Cipher',
     'morse': 'Morse Code',
+    
     'TowerOfHanoi':'Tower Of Hanoi'
 }
