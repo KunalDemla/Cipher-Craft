@@ -1,6 +1,6 @@
 from . import forms as cforms
 from . import helpers as chelpers
-# Create your views here.
+
 forms = {
     'caesar': cforms.CipherTextForm,
     'vigenere': cforms.VigenereForm,

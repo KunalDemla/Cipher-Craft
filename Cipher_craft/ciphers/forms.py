@@ -48,4 +48,4 @@ class MorseForm(forms.Form):
             ('encrypt', "Encrypt"),
             ('decrypt', "Decrypt"),
         )
-    )
+    )   
