@@ -50,16 +50,3 @@ class MorseForm(forms.Form):
         )
     )
 
-class TowerOfHanoiForm(forms.Form):
-    disks = forms.IntegerField(
-        label='Number of Disks',
-        required=True,
-        initial=1,
-    )
-    operation = forms.ChoiceField(
-        # label='Encrypt or Decrypt',
-        choices=(
-            ('decrypt', "Decrypt"),
-        )
-    )
-    
