@@ -8,6 +8,7 @@ forms = {
     'vernam':cforms.VigenereForm,
     'morse': cforms.MorseForm,
     'railfence': cforms.CipherTextForm,
+    'TowerOfHanoi': cforms.TowerOfHanoiForm
 }
 
 encrypt_func = {
@@ -17,6 +18,7 @@ encrypt_func = {
     'vernam': chelpers.vernamEncrypt,
     'morse': chelpers.morseEncrypt,
     'railfence': chelpers.railfenceEncrypt,
+    'TowerOfHanoi':chelpers.TowerOfHanoiSolver
 }
 
 decrypt_func = {
@@ -26,6 +28,7 @@ decrypt_func = {
     'vernam': chelpers.vernamDecrypt,
     'morse': chelpers.morseDecrypt,
     'railfence': chelpers.railfenceDecrypt,
+    'TowerOfHanoi':chelpers.TowerOfHanoiSolver,
 }
 
 cipher_title = {
@@ -35,4 +38,5 @@ cipher_title = {
     'vernam':'Vernam Cipher',
     'morse': 'Morse Code',
     'railfence': 'Rail Fence Cipher',
+    'TowerOfHanoi':'Tower Of Hanoi'
 }

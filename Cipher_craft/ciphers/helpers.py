@@ -79,3 +79,10 @@ def railfenceDecrypt(form):
     s = form.cleaned_data['key']
     obj = RailFence()
     return obj.decrypt(text,s)
+
+#Tower of hanoi
+from .logic.TowerOfHanoi import TowerOfHanoi
+def TowerOfHanoiSolver(form):
+    disks = form.cleaned_data['disks']
+    obj = TowerOfHanoi()
+    return obj.solver(disks)
