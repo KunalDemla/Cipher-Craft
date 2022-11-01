@@ -4,3 +4,4 @@
 
 Cipher_craft/ciphers/__pycache__/forms.cpython-310.pyc
 *.pyc
+.idea/
