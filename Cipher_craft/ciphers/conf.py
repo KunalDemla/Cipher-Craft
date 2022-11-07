@@ -8,7 +8,10 @@ forms = {
     'vernam':cforms.VigenereForm,
     'morse': cforms.MorseForm,
     'railfence': cforms.CipherTextForm,
-    'TowerOfHanoi': cforms.TowerOfHanoiForm
+    'TowerOfHanoi': cforms.TowerOfHanoiForm,
+    'XOR':cforms.XOR,
+    'columnTransposition':cforms.XOR,  #using the same form
+    'atbash': cforms.atbash
 }
 
 encrypt_func = {
@@ -18,7 +21,10 @@ encrypt_func = {
     'vernam': chelpers.vernamEncrypt,
     'morse': chelpers.morseEncrypt,
     'railfence': chelpers.railfenceEncrypt,
-    'TowerOfHanoi':chelpers.TowerOfHanoiSolver
+    'TowerOfHanoi': chelpers.TowerOfHanoiSolver,
+    'XOR':chelpers.xorEncrypt,
+    'columnTransposition':chelpers.columTranspositionEncrypt,
+    'atbash': chelpers.atbashEncrypt
 }
 
 decrypt_func = {
@@ -29,6 +35,9 @@ decrypt_func = {
     'morse': chelpers.morseDecrypt,
     'railfence': chelpers.railfenceDecrypt,
     'TowerOfHanoi':chelpers.TowerOfHanoiSolver,
+    'XOR':chelpers.xorDecrypt,
+    'columnTransposition':chelpers.columTranspositionDecrypt,
+    'atbash':chelpers.atbashDecrypt
 }
 
 cipher_title = {
@@ -38,5 +47,8 @@ cipher_title = {
     'vernam':'Vernam Cipher',
     'morse': 'Morse Code',
     'railfence': 'Rail Fence Cipher',
-    'TowerOfHanoi':'Tower Of Hanoi'
+    'TowerOfHanoi':'Tower Of Hanoi',
+    'XOR':'XOR',
+    'columnTransposition':'Column Transposition Cipher',
+    'atbash':'atbash'
 }

@@ -41,6 +41,40 @@ def plydecrypt(form):
     return obj.decrypt(text,s)
 
 
+#XOR
+from .logic.xor import encryptDecrypt
+def xorEncrypt(form):
+    text=form.cleaned_data['text']
+    key=form.cleaned_data['key']
+    return encryptDecrypt(key,text)
+def xorDecrypt(form):
+    text=form.cleaned_data['text']
+    key=form.cleaned_data['key']
+    return encryptDecrypt(key,text)
+#columnarTransposition
+
+from .logic.columnarTransposition import encryptMessage,decryptMessage
+def columTranspositionEncrypt(form):
+    text = form.cleaned_data['text']
+    key = form.cleaned_data['key']
+    return encryptMessage(key,text)
+
+def columTranspositionDecrypt(form):
+    text = form.cleaned_data['text']
+    key = form.cleaned_data['key']
+    return decryptMessage(key,text)
+
+
+#ATBASH
+from .logic.atbash import atbash
+def atbashEncrypt(form):
+    text = form.cleaned_data['text']
+    return atbash(text)
+def atbashDecrypt(form):
+    text = form.cleaned_data['text']
+    return atbash(text)
+
+
 #MORSE
 from .logic.morse import Morse
 def morseEncrypt(form):

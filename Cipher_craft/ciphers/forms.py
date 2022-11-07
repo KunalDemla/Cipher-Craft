@@ -61,4 +61,35 @@ class TowerOfHanoiForm(forms.Form):
         choices=(
             ('decrypt', "Decrypt"),
         )
-    )  
+    )
+
+class XOR(forms.Form):
+    text = forms.CharField(
+        label='Text',
+        max_length=1000
+    )
+    key = forms.CharField(
+        label='Key',
+        required=False,
+        initial='P',
+    )
+    operation = forms.ChoiceField(
+        label='Encrypt or Decrypt',
+        choices=(
+            ('encrypt', "Encrypt"),
+            ('decrypt', "Decrypt"),
+        )
+    )
+
+class atbash(forms.Form):
+    text = forms.CharField(
+        label='Text',
+        max_length=1000
+    )
+    operation = forms.ChoiceField(
+        label='Encrypt or Decrypt',
+        choices=(
+            ('encrypt', "Encrypt"),
+            ('decrypt', "Decrypt"),
+        )
+    )
