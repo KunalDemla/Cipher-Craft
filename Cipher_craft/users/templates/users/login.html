@@ -1,5 +1,10 @@
 {%extends "home/base.html"%}
 {% load crispy_forms_tags %}
+{% if user.is_authenticated %}
+{%block redir%}
+<meta http-equiv = "refresh" content = "0; url = {% url 'user_profile'%}" />
+{%endblock redir%}
+{%endif%}
 {%block content%}
     <div class="content-section">
         <form method="POST">
