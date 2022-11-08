@@ -17,11 +17,11 @@ def ciphers(request,cipher_choice):
         'title': cipher_title[cipher_choice],
         'about': 'ciphers/'+cipher_choice+'_about.html',
         'choice': cipher_choice,
-        'fav': 'Add to Favourites'
+        'fav': True
     }
     cipher = get_object_or_404(Ciphers,name=cipher_choice)
     if cipher.favourites.filter(id=request.user.id).exists():
-        context['fav'] = 'Remove from Favourites'
+        context['fav'] = False
     if request.method == 'POST':
         form = forms[cipher_choice](request.POST)
         if form.is_valid():
