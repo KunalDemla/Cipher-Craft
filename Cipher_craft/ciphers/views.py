@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
+from .models import Ciphers
 from .conf import forms,encrypt_func,decrypt_func,cipher_title
 
 def home(request):
@@ -14,8 +15,13 @@ def ciphers(request,cipher_choice):
         'form': forms[cipher_choice](),
         'output_text': '',
         'title': cipher_title[cipher_choice],
-        'about': 'ciphers/'+cipher_choice+'_about.html'
+        'about': 'ciphers/'+cipher_choice+'_about.html',
+        'choice': cipher_choice,
+        'fav': 'Add to Favourites'
     }
+    cipher = get_object_or_404(Ciphers,name=cipher_choice)
+    if cipher.favourites.filter(id=request.user.id).exists():
+        context['fav'] = 'Remove from Favourites'
     if request.method == 'POST':
         form = forms[cipher_choice](request.POST)
         if form.is_valid():
