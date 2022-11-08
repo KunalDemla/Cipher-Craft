@@ -1,0 +1,14 @@
+{%extends "home/base.html"%}
+{%block content%}
+<legend class="border-bottom mb-4 bodcol cipher-heading">
+    Favourites
+</legend>
+<div>
+    <ul class="list-group">
+        {% for cipher in favourite_ciphers %} 
+        <li class="mb-2"><a style="color: black; font-size: 20px;" href="{% url 'ciphers' cipher.name %}">{{cipher.title}}</a> 
+            <a href="{% url 'favourite_add' cipher.name %}" class='btn'>Remove</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{%endblock content%}
