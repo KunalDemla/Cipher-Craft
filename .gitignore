@@ -4,3 +4,5 @@ Cipher_craft/ciphers/__pycache__/forms.cpython-310.pyc
 *.pyc
 .idea/
 Cipher_craft/Cipher_craft/__pycache__/
+*.pyc
+*.pyc

@@ -1,15 +1,35 @@
 <h4 class="card-title">
-    About the Caesar Cipher
+    About the Playfair Cipher
 </h4>
 
 <p class="card-text">
-	In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+The Playfair cipher or Playfair square or Wheatstone–Playfair cipher is a manual symmetric encryption technique and was the first literal digram substitution cipher. The scheme was invented in 1854 by Charles Wheatstone, but bears the name of Lord Playfair for promoting its use.   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security. 
 </p>
 
 <p class="card-text">
-   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security. 
+    The technique encrypts pairs of letters (bigrams or digrams), instead of single letters as in the simple substitution cipher and rather more complex Vigenère cipher systems then in use. The Playfair is thus significantly harder to break since the frequency analysis used for simple substitution ciphers does not work with it. The frequency analysis of bigrams is possible, but considerably more difficult. With 600 possible bigrams rather than the 26 possible monograms (single symbols, usually letters in this context), a considerably larger cipher text is required in order to be useful.
 </p>
+<p class="card-text">
+    <strong>Encryption</strong> <br>  
+    The Algorithm consists of 2 steps: <br>
+    <ol>
+        <li>Generate the key Square(5x5):</li>
+            <ul>
+                <li>
+                    The key square is a 5x5 grid of alphabets that acts as the key for encrypting the plaintext. Each of the 25 alphabets must be unique and one letter of the alphabet (usually J) is omitted from the table (as the table can hold only 25 alphabets). If the plaintext contains J, then it is replaced by I. 
+                </li>
+                <li>
+                    The initial alphabets in the key square are the unique alphabets of the key in the order in which they appear followed by the remaining letters of the alphabet in order. 
+                </li>
+            </ul>
+        <li>
+            Algorithm to encrypt the plain text: The plaintext is split into pairs of two letters (digraphs). If there is an odd number of letters, a Z is added to the last letter. 
 
+        </li>
+    </ol>
+</p>
 <p class="card-subtitle mb-2 text-muted">
-    Retrieved from <a href="https://en.wikipedia.org/wiki/Caesar_cipher">en.wikipedia.org/wiki/Caesar_cipher</a>
+    Retrieved from <br>
+    <a href="https://en.wikipedia.org/wiki/Playfair_cipher">en.wikipedia.org/wiki/Playfair_cipher</a><br>
+    <a href="https://www.geeksforgeeks.org/playfair-cipher-with-examples/">www.geeksforgeeks.org/playfair-cipher-with-examples/</a>
 </p>
