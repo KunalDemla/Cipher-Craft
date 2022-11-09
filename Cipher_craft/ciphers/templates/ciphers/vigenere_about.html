@@ -3,13 +3,26 @@
 </h4>
 
 <p class="card-text">
-	In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
-</p>
+    Vigenere Cipher is a method of encrypting alphabetic text. It uses a simple form of polyalphabetic substitution. A polyalphabetic cipher is any cipher based on substitution, using multiple substitution alphabets. The encryption of the original text is done using the Vigenère square or Vigenère table.</p>
 
 <p class="card-text">
-   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security. 
+    <ul>
+        <li>The table consists of the alphabets written out 26 times in different rows, each alphabet shifted cyclically to the left compared to the previous alphabet, corresponding to the 26 possible Caesar Ciphers.
+        </li>
+        <li>
+            At different points in the encryption process, the cipher uses a different alphabet from one of the rows.
+        </li>
+        The alphabet used at each point depends on a repeating keyword.
+    </ul>
 </p>
-
+<p>
+    <strong>Encryption</strong><br>
+    The plaintext(P) and key(K) are added modulo 26. <br>
+    Ei = (Pi + Ki) mod 26 <br>
+    <br>
+    <strong>Decryption</strong> <br>
+    Di = (Ei - Ki + 26) mod 26
+</p>
 <p class="card-subtitle mb-2 text-muted">
-    Retrieved from <a href="https://en.wikipedia.org/wiki/Caesar_cipher">en.wikipedia.org/wiki/Caesar_cipher</a>
+    Retrieved from <a href="https://www.geeksforgeeks.org/vigenere-cipher/">www.geeksforgeeks.org/vigenere-cipher/</a>
 </p>
