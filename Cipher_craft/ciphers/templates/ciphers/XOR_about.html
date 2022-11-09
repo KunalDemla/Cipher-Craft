@@ -1,14 +1,22 @@
 <h4 class="card-title">
-    About the Caesar Cipher
+    About the XOR Cipher
 </h4>
 
 <p class="card-text">
-	In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+    In cryptography, the simple XOR cipher is a type of additive cipher,an encryption algorithm that operates according to the principles:
+    <ul>
+    A <span>&#8853;</span>  0 = A,<br>
+    A <span>&#8853;</span>  A = 0,<br>
+    A <span>&#8853;</span>  B = B <span>&#8853;</span>  A,<br>
+    (A <span>&#8853;</span>  B) <span>&#8853;</span>  C = A <span>&#8853;</span>  (B <span>&#8853;</span>  C),<br>
+    (B <span>&#8853;</span>  A) <span>&#8853;</span>  A = B <span>&#8853;</span>  0 = B, <br><br>
+    </ul>
+where <span>&#8853;</span>  denotes the exclusive disjunction (XOR) operation.[2] This operation is sometimes called modulus 2 addition (or subtraction, which is identical).[3] With this logic, a string of text can be encrypted by applying the bitwise XOR operator to every character using a given key. To decrypt the output, merely reapplying the XOR function with the key will remove the cipher.
+    
 </p>
 
 <p class="card-text">
-   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security.
-</p>
+    The basic idea behind XOR – encryption is, if you don’t know the XOR-encryption key before decrypting the encrypted data, it is impossible to decrypt the data. For example, if you XOR two unknown variables you cannot tell what the output of those variables is. Consider the operation A XOR B, and this returns true. Now if the value of one of the variable is known we can tell the value of another variable. If A is True then B should be False or if A is False then B should be true according to the properties of the boolean XOR operation. Without knowing one of the value we can not decrypt the data and this idea is used in XOR – encryption.</p>
 
 <p class="card-subtitle mb-2 text-muted">
     Retrieved from <a href="https://en.wikipedia.org/wiki/Caesar_cipher">en.wikipedia.org/wiki/Caesar_cipher</a>

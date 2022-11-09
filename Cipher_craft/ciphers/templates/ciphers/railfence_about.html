@@ -1,15 +1,36 @@
 <h4 class="card-title">
-    About the Caesar Cipher
+    About the Railfence Cipher
 </h4>
 
 <p class="card-text">
-	In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+    Given a plain-text message and a numeric key, cipher/de-cipher the given text using Rail Fence algorithm.
+    The rail fence cipher (also called a zigzag cipher) is a form of transposition cipher. It derives its name from the
+    way in which it is encoded. </p>
+</p>
+<p class="card-text">
+    <strong>Encryption</strong><br>
+    In a transposition cipher, the order of the alphabets is re-arranged to obtain the cipher-text.
+<ul>
+   <li>In the rail fence cipher, the plain-text is written downwards and diagonally on successive rails of an imaginary
+    fence.</li> 
+
+<li>When we reach the bottom rail, we traverse upwards moving diagonally, after reaching the top rail, the direction is
+    changed again. Thus the alphabets of the message are written in a zig-zag manner.</li>    
+
+    <li>Then, we fill the cipher-text row wise. After filling it, we traverse the matrix in zig-zag manner to obtain the original text.</li> 
+</ul>
 </p>
 
 <p class="card-text">
-   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security. 
+    <strong>Decryption</strong><br>
+    As we've seen earlier, the number of columns in rail fence cipher remains equal to the length of plain-text message. And the key corresponds to the number of rails.
+    <ul>
+    <li>    Hence, rail matrix can be constructed accordingly. Once we’ve got the matrix we can figure-out the spots where texts should be placed (using the same way of moving diagonally up and down alternatively ).
+    </li>
+    <li> Then, we fill the cipher-text row wise. After filling it, we traverse the matrix in zig-zag manner to obtain the original text.
+    </li>
+    </ul>
 </p>
-
 <p class="card-subtitle mb-2 text-muted">
-    Retrieved from <a href="https://en.wikipedia.org/wiki/Caesar_cipher">en.wikipedia.org/wiki/Caesar_cipher</a>
+    Retrieved from <a href="https://www.geeksforgeeks.org/rail-fence-cipher-encryption-decryption/">www.geeksforgeeks.org/rail-fence-cipher-encryption-decryption</a>
 </p>

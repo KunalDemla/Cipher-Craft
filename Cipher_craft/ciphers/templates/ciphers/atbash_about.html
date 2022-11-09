@@ -1,15 +1,32 @@
 <h4 class="card-title">
-    About the Caesar Cipher
+    About the Atbash Cipher
 </h4>
 
 <p class="card-text">
-	In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
+    Definition: Atbash cipher is a substitution cipher with just one specific key where all the letters are reversed
+    that is A to Z and Z to A. It was originally used to encode the Hebrew alphabets but it can be modified to encode
+    any alphabet.
+    The name derives from the first, last, second, and second to last Hebrew letters (Aleph–Taw–Bet–Shin).
 </p>
 
 <p class="card-text">
-   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security.
+    The Atbash cipher is a particular type of monoalphabetic cipher formed by taking the alphabet (or abjad, syllabary,
+    etc.) and mapping it to its reverse, so that the first letter becomes the last letter, the second letter becomes the
+    second to last letter, and so on. For example, the Latin alphabet would work like this:
+    Due to the fact that there is only one way to perform this, the Atbash cipher provides no communications security,
+    as it lacks any sort of key. If multiple collating orders are available, which one was used in encryption can be
+    used as a key, but this does not provide significantly more security, considering that only a few letters can give
+    away which one was used.
+    The following key is used in the Atbash algorithm:
 </p>
-
+<p class="card-text">
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+</p>
+<p class="card-text">
+    ZYXWVUTSRQPONMLKJIHGFEDCBA
+</p>
 <p class="card-subtitle mb-2 text-muted">
-    Retrieved from <a href="https://en.wikipedia.org/wiki/Caesar_cipher">en.wikipedia.org/wiki/Caesar_cipher</a>
+    Retrieved from <br>
+    <a href="https://en.wikipedia.org/wiki/Atbash">en.wikipedia.org/wiki/Caesar_cipher</a> <br>
+    <a href="https://www.geeksforgeeks.org/implementing-atbash-cipher/">www.geeksforgeeks.org/implementing-atbash-cipher/</a>
 </p>
