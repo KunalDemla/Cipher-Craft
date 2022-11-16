@@ -27,34 +27,40 @@ class Morse:
         :param plain_text: Plain text to be encrypted (str)
         :return: Encrypted text (str)
         """
-        self._plain_text = plain_text.upper()
-        self._encrypted_text = ''
-        for letter in self._plain_text:
-            if letter != ' ':
-                self._encrypted_text += self._morse[letter] + ' '
-            else:
-                self._encrypted_text += ' '
-        return self._encrypted_text
+        try:
+            self._plain_text = plain_text.upper()
+            self._encrypted_text = ''
+            for letter in self._plain_text:
+                if letter != ' ':
+                    self._encrypted_text += self._morse[letter] + ' '
+                else:
+                    self._encrypted_text += ' '
+            return self._encrypted_text
+        except:
+            return "#"
 
     def decrypt(self, encrypted_text):
         """
         :param encrypted_text: Encrypted text to be decrypted (str)
         :return: Decrypted text (str)
         """
-        self._encrypted_text = encrypted_text.replace('_','-')
-        self._encrypted_text += ' '
-        self._plain_text = ''
-        temp = ''
-        i = 0
-        for letter in self._encrypted_text:
-            if letter != ' ':
-                i = 0
-                temp += letter
-            else:
-                i += 1
-                if i == 2:
-                    self._plain_text += ' '
+        try:
+            self._encrypted_text = encrypted_text.replace('_','-')
+            self._encrypted_text += ' '
+            self._plain_text = ''
+            temp = ''
+            i = 0
+            for letter in self._encrypted_text:
+                if letter != ' ':
+                    i = 0
+                    temp += letter
                 else:
-                    self._plain_text += self._morse_inv[temp]
-                    temp = ''
-        return self._plain_text
+                    i += 1
+                    if i == 2:
+                        self._plain_text += ' '
+                    else:
+                        self._plain_text += self._morse_inv[temp]
+                        temp = ''
+            return self._plain_text
+        except:
+            return "#"

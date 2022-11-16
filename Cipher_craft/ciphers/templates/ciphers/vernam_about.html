@@ -1,13 +1,39 @@
 <h4 class="card-title">
-    About the Caesar Cipher
+    About the Vernam Cipher
 </h4>
 
 <p class="card-text">
-	In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.
-</p>
+    Vernam Cipher is a method of encrypting alphabetic text. It is one of the Substitution techniques for converting plain text into cipher text. In this mechanism we assign a number to each character of the Plain-Text, like (a = 0, b = 1, c = 2, … z = 25). <br>
+
+    <strong>Method to take key:</strong> In the Vernam cipher algorithm, we take a key to encrypt the plain text whose length should be equal to the length of the plain text.</p>
 
 <p class="card-text">
-   The encryption step performed by a Caesar cipher is often incorporated as part of more complex schemes, such as the Vigenère cipher, and still has modern application in the ROT13 system. As with all single-alphabet substitution ciphers, the Caesar cipher is easily broken and in modern practice offers essentially no communications security. 
+    <strong>Encryption</strong>
+      <ul>
+        <li>
+            Assign a number to each character of the plain-text and the key according to alphabetical order. 
+        </li>
+        <li>
+            Bitwise XOR both the number (Corresponding plain-text character number and Key character number). 
+        </li>
+        <li>
+            Subtract the number from 26 if the resulting number is greater than or equal to 26, if it isn’t then leave it
+        </li>
+      </ul>
+</p>
+<p class="class-text">
+    <strong>Decryption</strong>
+    <ul>
+        <li>
+            Obtain the binary code for each character of the cipher text 
+        </li>
+        <li>
+            Obtain the 8-bit ASCII code for each letter of the key:
+        </li>
+        <li>
+            Carry out the XOR operation, applying it to each corresponding pair of bits:
+        </li>
+    </ul>
 </p>
 
 <p class="card-subtitle mb-2 text-muted">
