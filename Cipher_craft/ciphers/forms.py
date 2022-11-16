@@ -57,7 +57,7 @@ class TowerOfHanoiForm(forms.Form):
         initial=1,
     )
     operation = forms.ChoiceField(
-        label='Decrypt',
+        label='Choice',
         choices=(
             ('decrypt', "Decrypt"),
         )
